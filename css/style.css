@@ -1,17 +1,26 @@
-/* SleepFactor marketing site – design tokens aligned with the mobile app */
+/* SleepFactor marketing site – 60/30/10: White (60%), Blue (30%), Lavender (10%) */
 
 :root {
+  /* 60% – White (dominant background and space) */
+  --white: #FFFFFF;
+  --white-soft: #FAFAFA;
+
+  /* 30% – Blue (secondary: structure, headers, key UI) */
   --primary: #1E3A8A;
   --primary-light: #2563EB;
-  --secondary: #6366F1;
-  --background: #FFFFFF;
+  --primary-muted: rgba(30, 58, 138, 0.08);
+
+  /* 10% – Lavender (accent only) */
+  --accent: #E7C8E7;
+  --accent-soft: rgba(231, 200, 231, 0.35);
+
+  --background: var(--white);
   --text-primary: #1F2937;
   --text-secondary: #6B7280;
   --text-light: #9CA3AF;
   --border: #E5E7EB;
   --success: #10B981;
-  --accent: #E7C8E7;
-  --card-bg: #FFFFFF;
+  --card-bg: var(--white);
   --spacing-xs: 4px;
   --spacing-sm: 8px;
   --spacing-md: 12px;
@@ -51,14 +60,26 @@ body {
   padding: 0 var(--spacing-regular);
 }
 
-/* Header & nav */
+/* Header & nav – 30% blue band */
 .site-header {
-  background: var(--background);
-  border-bottom: 1px solid var(--border);
+  background: var(--primary);
+  border-bottom: none;
   padding: var(--spacing-regular) 0;
   position: sticky;
   top: 0;
   z-index: 100;
+}
+
+.site-header .logo-link svg path {
+  fill: var(--white);
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.nav-links a:hover {
+  color: var(--white);
 }
 
 .site-header .container {
@@ -91,14 +112,9 @@ body {
 }
 
 .nav-links a {
-  color: var(--text-secondary);
   text-decoration: none;
   font-size: var(--font-small);
   font-weight: 500;
-}
-
-.nav-links a:hover {
-  color: var(--primary);
 }
 
 /* Hero */
@@ -120,23 +136,24 @@ body {
   font-size: var(--font-xl);
   font-weight: 700;
   margin: 0;
-  color: var(--text-primary);
+  color: var(--primary);
 }
 
-/* Sections */
+/* Sections – 60% white; alternating with soft blue tint (30% family) */
 .section {
   padding: var(--spacing-xxl) 0;
+  background: var(--white);
 }
 
 .section:nth-child(even) {
-  background: #F9FAFB;
+  background: var(--primary-muted);
 }
 
 .section-title {
   font-size: var(--font-medium);
   font-weight: 700;
   margin: 0 0 var(--spacing-lg);
-  color: var(--text-primary);
+  color: var(--primary);
   text-align: center;
 }
 
@@ -194,7 +211,7 @@ body {
   font-size: var(--font-medium);
   font-weight: 700;
   margin: 0 0 var(--spacing-sm);
-  color: var(--text-primary);
+  color: var(--primary);
 }
 
 .step p {
@@ -203,10 +220,16 @@ body {
   font-size: var(--font-body);
 }
 
+/* 10% lavender accent on step cards */
+.step-content {
+  border-left: 4px solid var(--accent);
+  padding-left: var(--spacing-regular);
+}
+
 .step-image {
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.12);
 }
 
 .step-image img {
@@ -217,14 +240,15 @@ body {
   object-fit: cover;
 }
 
-/* CTA */
+/* CTA – 10% lavender band */
 .cta-section {
   text-align: center;
   padding: var(--spacing-xxl) 0;
+  background: var(--accent-soft);
 }
 
 .cta-section p {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   margin: 0 0 var(--spacing-lg);
 }
 
@@ -250,11 +274,12 @@ body {
   color: white;
 }
 
-/* Footer */
+/* Footer – white, blue links */
 .site-footer {
   border-top: 1px solid var(--border);
   padding: var(--spacing-xl) 0;
   margin-top: var(--spacing-xxl);
+  background: var(--white);
 }
 
 .site-footer .container {
@@ -299,7 +324,7 @@ body {
   font-size: var(--font-large);
   font-weight: 700;
   margin: 0;
-  color: var(--text-primary);
+  color: var(--primary);
 }
 
 /* Content (about, privacy) */
@@ -313,7 +338,7 @@ body {
   font-size: var(--font-medium);
   font-weight: 700;
   margin: var(--spacing-xl) 0 var(--spacing-sm);
-  color: var(--text-primary);
+  color: var(--primary);
 }
 
 .content-block h2:first-child {
@@ -340,13 +365,13 @@ body {
   text-decoration: underline;
 }
 
-/* Cookie banner */
+/* Cookie banner – 30% blue with 10% lavender button */
 .cookie-banner {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--text-primary);
+  background: var(--primary);
   color: white;
   padding: var(--spacing-regular) var(--spacing-regular) calc(var(--spacing-regular) + env(safe-area-inset-bottom));
   z-index: 1000;
@@ -375,10 +400,11 @@ body {
 
 .cookie-banner .btn {
   flex-shrink: 0;
-  background: white;
-  color: var(--text-primary);
+  background: var(--accent);
+  color: var(--primary);
 }
 
 .cookie-banner .btn:hover {
-  background: #F3F4F6;
+  background: var(--white);
+  color: var(--primary);
 }
