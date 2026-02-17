@@ -149,6 +149,11 @@ body {
   background: var(--primary-muted);
 }
 
+/* How it works: one clear block, steps stand out */
+.section--how-it-works {
+  background: var(--white-soft);
+}
+
 .section-title {
   font-size: var(--font-medium);
   font-weight: 700;
@@ -159,18 +164,22 @@ body {
 
 .section-intro {
   text-align: center;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   max-width: 560px;
   margin: 0 auto var(--spacing-xxl);
   font-size: var(--font-body);
 }
 
-/* Story steps (linear flow) */
+.section-intro strong {
+  color: var(--primary);
+}
+
+/* Story steps – each step is a clear card with strong delineation */
 .story-steps {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xxl);
-  max-width: 720px;
+  gap: var(--spacing-xl);
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -179,6 +188,48 @@ body {
   grid-template-columns: 1fr;
   gap: var(--spacing-xl);
   align-items: center;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius);
+  background: var(--white);
+  border: 2px solid var(--border);
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.06);
+}
+
+/* Step 1: white card, blue left edge */
+.step--1 {
+  border-left: 6px solid var(--primary);
+}
+
+/* Step 2: soft blue background so it reads as “step 2” block */
+.step--2 {
+  background: var(--primary-muted);
+  border-color: rgba(30, 58, 138, 0.2);
+  border-left: 6px solid var(--primary);
+}
+
+/* Step 3: white with lavender accent */
+.step--3 {
+  border-left: 6px solid var(--accent);
+  border-color: var(--accent-soft);
+}
+
+/* Fourth block: secondary, no number – clearly “extra detail” */
+.step--detail {
+  background: var(--white);
+  border: 1px dashed var(--border);
+  border-left: 4px solid var(--text-light);
+  padding: var(--spacing-lg);
+}
+
+.step--detail .step-content {
+  border-left: none;
+  padding-left: 0;
+}
+
+.step--detail h3 {
+  font-size: var(--font-body);
+  font-weight: 600;
+  color: var(--text-secondary);
 }
 
 @media (min-width: 640px) {
@@ -193,17 +244,31 @@ body {
   }
 }
 
+.step-label {
+  display: block;
+  font-size: var(--font-xs, 12px);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.step--detail .step-label {
+  display: none;
+}
+
 .step-number {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: var(--primary);
   color: white;
   font-weight: 700;
-  font-size: var(--font-small);
+  font-size: var(--font-large);
   margin-bottom: var(--spacing-sm);
 }
 
@@ -216,14 +281,13 @@ body {
 
 .step p {
   margin: 0;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   font-size: var(--font-body);
+  line-height: 1.5;
 }
 
-/* 10% lavender accent on step cards */
 .step-content {
-  border-left: 4px solid var(--accent);
-  padding-left: var(--spacing-regular);
+  padding-left: 0;
 }
 
 .step-image {
