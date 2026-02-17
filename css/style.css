@@ -252,6 +252,73 @@ body {
   margin: 0 0 var(--spacing-lg);
 }
 
+/* Waitlist form */
+.waitlist-form {
+  max-width: 400px;
+  margin: 0 auto var(--spacing-lg);
+  text-align: left;
+}
+
+.waitlist-form .form-row {
+  margin-bottom: var(--spacing-regular);
+}
+
+.waitlist-form label {
+  display: block;
+  font-size: var(--font-small);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.waitlist-form .optional {
+  font-weight: 400;
+  color: var(--text-light);
+}
+
+.waitlist-form input {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-regular);
+  font-size: var(--font-body);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--text-primary);
+}
+
+.waitlist-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-muted);
+}
+
+.waitlist-form button[type="submit"] {
+  width: 100%;
+  margin-top: var(--spacing-sm);
+}
+
+.waitlist-form button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.waitlist-message {
+  font-size: var(--font-small);
+  margin-top: var(--spacing-regular);
+  padding: var(--spacing-sm) var(--spacing-regular);
+  border-radius: var(--radius-sm);
+}
+
+.waitlist-message--success {
+  background: rgba(16, 185, 129, 0.15);
+  color: #047857;
+}
+
+.waitlist-message--error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #B91C1C;
+}
+
 /* Buttons */
 .btn {
   display: inline-block;

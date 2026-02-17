@@ -10,6 +10,8 @@ Static marketing site for the SleepFactor mobile app. Matches the app’s design
 
 The site uses a single cookie to remember your cookie consent (no tracking).
 
+**Waitlist:** The homepage includes a waitlist form. Submissions are stored in the SleepFactor Supabase project in the `waitlist` table. The same Supabase project as the app is used by default; see `js/supabase-config.js` to point to a different project.
+
 ## Hosting on GitHub Pages
 
 1. **Create a new repository** on GitHub (e.g. `sleepfactor-website` or `SleepfactorWebsite`). Do not add a README, .gitignore, or license if you’re pushing this folder so the repo stays empty.
