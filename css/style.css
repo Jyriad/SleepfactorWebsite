@@ -176,9 +176,9 @@ body {
   color: var(--primary);
   font-weight: 700;
   white-space: nowrap;
-  background: rgba(147, 112, 219, 0.18);
+  border: 1px solid rgba(30, 58, 138, 0.35);
   border-radius: 6px;
-  box-shadow: 0 0 0 1px rgba(147, 112, 219, 0.25), 0 0 14px rgba(147, 112, 219, 0.2);
+  box-sizing: border-box;
 }
 
 @keyframes hero-rotate {
@@ -381,6 +381,10 @@ body {
 
 .step-integration .integration-badges {
   justify-content: flex-start;
+}
+
+.step-science {
+  margin-top: var(--spacing-md);
 }
 
 .step-content {
