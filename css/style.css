@@ -143,6 +143,16 @@ body {
   line-height: 1.5;
 }
 
+.hero-subhead-line {
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .hero-subhead-line {
+    white-space: normal;
+  }
+}
+
 .hero-rotating-wrap {
   display: inline-block;
   min-width: 14ch;
