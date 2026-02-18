@@ -138,48 +138,42 @@ body {
 .hero-subhead {
   font-size: var(--font-large);
   color: var(--text-primary);
-  margin: 0 auto var(--spacing-md);
-  max-width: 560px;
-  line-height: 1.4;
+  margin: 0 auto var(--spacing-xl);
+  max-width: 640px;
+  line-height: 1.5;
 }
 
 .hero-rotating-wrap {
   display: inline-block;
   min-width: 14ch;
   text-align: left;
-  vertical-align: bottom;
+  vertical-align: middle;
   overflow: hidden;
-  height: 1.4em;
+  height: 1.5em;
 }
 
 .hero-rotating-list {
   display: inline-block;
-  animation: hero-rotate 18s ease-in-out infinite;
+  animation: hero-rotate 30s linear infinite;
 }
 
 .hero-rotating-item {
   display: block;
+  height: 1.5em;
+  line-height: 1.5em;
+  padding: 0 8px;
+  margin: 0 2px;
   color: var(--primary);
-  font-weight: 600;
+  font-weight: 700;
   white-space: nowrap;
+  background: rgba(147, 112, 219, 0.18);
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px rgba(147, 112, 219, 0.25), 0 0 14px rgba(147, 112, 219, 0.2);
 }
 
 @keyframes hero-rotate {
-  0%, 14% { transform: translateY(0); }
-  16%, 30% { transform: translateY(-1.4em); }
-  32%, 46% { transform: translateY(-2.8em); }
-  48%, 62% { transform: translateY(-4.2em); }
-  64%, 78% { transform: translateY(-5.6em); }
-  80%, 94% { transform: translateY(-7em); }
-  96%, 100% { transform: translateY(0); }
-}
-
-.hero-integration {
-  font-size: var(--font-body);
-  color: var(--text-secondary);
-  margin: 0 auto var(--spacing-xl);
-  max-width: 520px;
-  line-height: 1.5;
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-9em); }
 }
 
 .integration-badges {
@@ -368,6 +362,17 @@ body {
   line-height: 1.5;
 }
 
+.step-integration {
+  margin-top: var(--spacing-md) !important;
+  font-size: var(--font-small);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.step-integration .integration-badges {
+  justify-content: flex-start;
+}
+
 .step-content {
   padding-left: 0;
 }
@@ -413,16 +418,17 @@ body {
 
 .reasons-label {
   display: block;
-  font-size: var(--font-small);
-  font-weight: 500;
-  color: var(--text-primary);
+  font-size: var(--font-body);
+  font-weight: 700;
+  color: var(--primary);
   margin-bottom: var(--spacing-sm);
 }
 
 .reasons-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm) var(--spacing-xl);
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: var(--spacing-xs);
 }
 
 .reasons-item {
