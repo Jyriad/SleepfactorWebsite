@@ -10,7 +10,7 @@ Static marketing site for the SleepFactor mobile app. Matches the app’s design
 
 The site uses a single cookie to remember your cookie consent (no tracking).
 
-**Waitlist:** The homepage includes a waitlist form. Submissions are stored in the SleepFactor Supabase project in the `waitlist` table. The same Supabase project as the app is used by default; see `js/supabase-config.js` to point to a different project.
+**Beta programme:** The homepage includes a beta sign-up form (email, optional name, and reasons for joining). Submissions are stored in the SleepFactor Supabase project in the `waitlist` table (including a `reasons` JSONB column). The same Supabase project as the app is used by default; see `js/supabase-config.js` to point to a different project.
 
 ## Hosting on GitHub Pages
 

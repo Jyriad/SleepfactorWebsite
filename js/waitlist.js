@@ -20,8 +20,11 @@
     e.preventDefault();
     var emailInput = form.querySelector('input[name="email"]');
     var nameInput = form.querySelector('input[name="name"]');
+    var reasonCheckboxes = form.querySelectorAll('input[name="reasons"]:checked');
     var email = emailInput && emailInput.value.trim();
     var name = nameInput ? nameInput.value.trim() : null;
+    var reasons = [];
+    for (var i = 0; i < reasonCheckboxes.length; i++) reasons.push(reasonCheckboxes[i].value);
 
     if (!email) {
       showMessage('Please enter your email address.', true);
@@ -35,7 +38,7 @@
     var url = window.SLEEPFACTOR_SUPABASE_URL;
     var key = window.SLEEPFACTOR_SUPABASE_ANON_KEY;
     if (!url || !key) {
-      showMessage('Waitlist is not configured. Please add your Supabase URL and key.', true);
+      showMessage('Beta sign-up is not configured. Please add your Supabase URL and key.', true);
       return;
     }
 
@@ -50,15 +53,16 @@
         'Authorization': 'Bearer ' + key,
         'Prefer': 'return=minimal'
       },
-      body: JSON.stringify({ email: email.toLowerCase(), name: name || null })
+      body: JSON.stringify({ email: email.toLowerCase(), name: name || null, reasons: reasons })
     })
       .then(function (res) {
         if (res.status === 201 || res.status === 204) {
-          showMessage('Thanks! You’re on the list. We’ll be in touch when SleepFactor is ready.');
+          showMessage('Thanks! You're in the beta programme. We'll be in touch when you can get early access.');
           if (emailInput) emailInput.value = '';
           if (nameInput) nameInput.value = '';
+          form.querySelectorAll('input[name="reasons"]').forEach(function (cb) { cb.checked = false; });
         } else if (res.status === 409) {
-          showMessage('This email is already on the waitlist.', true);
+          showMessage('This email is already in the beta programme.', true);
         } else {
           return res.json().then(function (body) {
             throw new Error(body.message || 'Something went wrong. Please try again.');
