@@ -57,7 +57,7 @@
     })
       .then(function (res) {
         if (res.status === 201 || res.status === 204) {
-          showMessage('Thanks! You're in the beta programme. We'll be in touch when you can get early access.');
+          showMessage("Thanks! You're in the beta programme. We'll be in touch when you can get early access.");
           if (emailInput) emailInput.value = '';
           if (nameInput) nameInput.value = '';
           form.querySelectorAll('input[name="reasons"]').forEach(function (cb) { cb.checked = false; });
