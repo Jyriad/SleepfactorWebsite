@@ -44,6 +44,47 @@
   box-sizing: border-box;
 }
 
+/* Accessibility: skip link and focus */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--spacing-regular);
+  z-index: 1000;
+  padding: var(--spacing-sm) var(--spacing-regular);
+  background: var(--white);
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: var(--spacing-regular);
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus visible – clear outline for keyboard users */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -74,8 +115,12 @@ body {
   z-index: 100;
 }
 
-.site-header .logo-link svg path {
-  fill: var(--white);
+/* Logo: SVG file for crisp rendering on all screens */
+.logo-link img {
+  display: block;
+  height: 40px;
+  width: auto;
+  vertical-align: middle;
 }
 
 .nav-links a {
@@ -100,11 +145,6 @@ body {
   color: inherit;
 }
 
-.logo-link svg {
-  display: block;
-  height: 40px;
-  width: auto;
-}
 
 .nav-links {
   display: flex;
@@ -219,10 +259,31 @@ body {
   border: 1px solid #dadce0;
 }
 
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
 .btn-hero-cta {
   font-size: var(--font-large);
   padding: var(--spacing-regular) var(--spacing-xxl);
   scroll-margin-top: 80px;
+}
+
+.hero-link-how {
+  font-size: var(--font-body);
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+.hero-link-how:hover {
+  text-decoration: underline;
+}
+.hero-link-how:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
 }
 
 /* Sections – 60% white; alternating with soft blue tint (30% family) */
@@ -397,12 +458,14 @@ body {
   box-shadow: 0 4px 12px rgba(30, 58, 138, 0.12);
 }
 
+/* Framed app mockups: show full device frame, no crop */
 .step-image img {
   width: 100%;
   height: auto;
   display: block;
-  max-height: 420px;
-  object-fit: cover;
+  max-height: 520px;
+  object-fit: contain;
+  object-position: center;
 }
 
 /* CTA – 10% lavender band */
@@ -606,6 +669,20 @@ body {
   max-width: 720px;
   margin: 0 auto;
   padding-bottom: var(--spacing-xxl);
+}
+
+.about-app-shot {
+  margin: 0 auto var(--spacing-xl);
+  max-width: 280px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.12);
+}
+.about-app-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .content-block h2 {
