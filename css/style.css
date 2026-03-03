@@ -489,6 +489,40 @@ body {
   margin-bottom: var(--spacing-regular);
 }
 
+.form-row--platform {
+  margin-bottom: var(--spacing-regular);
+}
+
+.platform-label {
+  display: block;
+  font-size: var(--font-small);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.platform-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+}
+
+.platform-option {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-body);
+  color: var(--text-primary);
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.platform-option input {
+  width: auto;
+  margin: 0;
+  flex-shrink: 0;
+}
+
 .form-row--reasons {
   margin-bottom: var(--spacing-regular);
 }
@@ -508,18 +542,23 @@ body {
   gap: var(--spacing-xs);
 }
 
-.reasons-item {
+/* Keep checkbox and label text on the same row (override .waitlist-form label block) */
+.reasons-item,
+.waitlist-form .reasons-item {
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-sm);
   font-size: var(--font-small);
   color: var(--text-primary);
   cursor: pointer;
+  margin-bottom: 0;
 }
 
-.reasons-item input {
+.reasons-item input,
+.waitlist-form .reasons-item input {
   width: auto;
   margin: 0;
+  flex-shrink: 0;
 }
 
 /* Waitlist form */
