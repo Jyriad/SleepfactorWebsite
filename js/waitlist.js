@@ -20,9 +20,11 @@
     e.preventDefault();
     var emailInput = form.querySelector('input[name="email"]');
     var nameInput = form.querySelector('input[name="name"]');
+    var platformRadio = form.querySelector('input[name="platform"]:checked');
     var reasonCheckboxes = form.querySelectorAll('input[name="reasons"]:checked');
     var email = emailInput && emailInput.value.trim();
     var name = nameInput ? nameInput.value.trim() : null;
+    var platform = platformRadio ? platformRadio.value : null;
     var reasons = [];
     for (var i = 0; i < reasonCheckboxes.length; i++) reasons.push(reasonCheckboxes[i].value);
 
@@ -53,13 +55,14 @@
         'Authorization': 'Bearer ' + key,
         'Prefer': 'return=minimal'
       },
-      body: JSON.stringify({ email: email.toLowerCase(), name: name || null, reasons: reasons })
+      body: JSON.stringify({ email: email.toLowerCase(), name: name || null, platform: platform, reasons: reasons })
     })
       .then(function (res) {
         if (res.status === 201 || res.status === 204) {
           showMessage("Thanks! You're in the beta programme. We'll be in touch when you can get early access.");
           if (emailInput) emailInput.value = '';
           if (nameInput) nameInput.value = '';
+          form.querySelectorAll('input[name="platform"]').forEach(function (r) { r.checked = false; });
           form.querySelectorAll('input[name="reasons"]').forEach(function (cb) { cb.checked = false; });
         } else if (res.status === 409) {
           showMessage('This email is already in the beta programme.', true);
