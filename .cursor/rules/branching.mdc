@@ -1,0 +1,55 @@
+# Branching & Deploy Workflow – Sleepfactor Website
+
+## Overview
+
+The Sleepfactor marketing website uses a **development branch workflow** so you can test changes (e.g. via Vercel previews) before they go live. Production is deployed by Vercel from the `main` branch.
+
+- **development** – Where all day-to-day changes and commits go. Use this for testing.
+- **main** – Production. Only updated by merging from `development` (e.g. via a pull request) after you’re happy with tests.
+
+## Rule for Commits and Pushes
+
+**When working in the SleepfactorWebsite repo:**
+
+- **Always commit and push to the `development` branch** unless the user explicitly asks to merge to `main`, open a PR to `main`, or work directly on `main`.
+- Before committing or pushing, switch to `development` (e.g. `git checkout development` or `git switch development`). If `development` doesn’t exist yet, create it from `main` and push it once.
+- Do **not** push directly to `main` unless the user has explicitly asked you to do so (e.g. “push to main” or “merge to main”).
+
+This keeps production (`main`) updated only after you’ve tested on `development` and merged.
+
+## Workflow Summary
+
+| Step | Branch | What happens |
+|------|--------|----------------|
+| 1. Make changes | development | Edit files, commit, push to `origin development`. |
+| 2. Test | Vercel preview | Use the Vercel preview URL for `development` (or for a PR) to test the site. |
+| 3. Release | PR → main | When tests pass, open a Pull Request from `development` into `main` on GitHub and merge. |
+| 4. Deploy | main | Vercel deploys from `main` to your production URL. |
+
+## Commands (for reference)
+
+```bash
+# Ensure you're on development (create it from main if needed)
+git checkout development
+# or, first time: git checkout -b development && git push -u origin development
+
+# After making changes: commit and push to development
+git add .
+git commit -m "Description of changes"
+git push origin development
+```
+
+To update production: open a PR **development → main** on GitHub, review, then merge. Vercel will deploy `main`.
+
+## GitHub Setup (one-time)
+
+For extra safety, you can protect `main` so it can’t be pushed to directly:
+
+- **GitHub repo → Settings → Branches → Add branch protection rule** for `main`.
+- Enable **“Require a pull request before merging”** (and any status checks if you add them later).
+
+Then all updates to `main` go through a PR from `development`.
+
+---
+alwaysApply: true
+---
