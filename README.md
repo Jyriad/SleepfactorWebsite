@@ -8,7 +8,7 @@ Static marketing site for the SleepFactor mobile app. Matches the app’s design
 - **About** – Mission, what we do, who we are, contact.
 - **Privacy** – Privacy policy and cookie information.
 
-The site uses a single cookie to remember your cookie consent (no tracking).
+The site uses a cookie for consent and basic web analytics from Vercel.
 
 **Beta programme:** The homepage includes a beta sign-up form (email, optional name, and reasons for joining). Submissions are stored in the SleepFactor Supabase project in the `waitlist` table (including a `reasons` JSONB column). The same Supabase project as the app is used by default; see `js/supabase-config.js` to point to a different project.
 
