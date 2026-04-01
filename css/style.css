@@ -118,7 +118,7 @@ body {
 /* Logo: SVG file for crisp rendering on all screens */
 .logo-link img {
   display: block;
-  height: 40px;
+  height: 35px;
   width: auto;
   vertical-align: middle;
 }
