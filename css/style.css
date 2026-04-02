@@ -1,5 +1,14 @@
 /* SleepFactor marketing site – 60/30/10: White (60%), Blue (30%), Lavender (10%) */
 
+/* Overused Grotesk — SIL OFL 1.1 · https://github.com/RandomMaerks/Overused-Grotesk */
+@font-face {
+  font-family: 'Overused Grotesk';
+  src: url('../fonts/OverusedGrotesk-VF.woff2') format('woff2-variations');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* 60% – White (dominant background and space) */
   --white: #FFFFFF;
@@ -36,6 +45,8 @@
   --font-xl: 28px;
   --line-height-body: 1.375;
   --line-height-tight: 1.25;
+  --font-family-sans: 'Overused Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, sans-serif;
   --radius: 12px;
   --radius-sm: 8px;
 }
@@ -91,7 +102,7 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  font-family: var(--font-family-sans);
   font-size: var(--font-body);
   line-height: var(--line-height-body);
   color: var(--text-primary);
