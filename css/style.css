@@ -330,7 +330,7 @@ body {
 
 .hero__visual img {
   width: 100%;
-  max-width: 520px;
+  max-width: 364px; /* ~70% of prior 520px cap */
   margin: 0 auto;
   height: auto;
   display: block;
