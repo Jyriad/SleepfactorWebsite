@@ -14,17 +14,19 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <header class="site-header">
-    <div class="container">
+    <div class="container site-header__inner">
       <a href="index.html" class="logo-link" aria-label="SleepFactor home">
         <img src="logo.svg" alt="" width="200" height="35" fetchpriority="high">
       </a>
-      <nav aria-label="Main">
+      <nav class="site-nav" aria-label="Main">
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="index.html#method">The Method</a></li>
+          <li><a href="index.html#science">Science</a></li>
+          <li><a href="index.html#correlation-engine">Sleep Lab</a></li>
+          <li><a href="about.html">Stories</a></li>
         </ul>
       </nav>
+      <a href="index.html#beta-programme" class="btn btn-nav-cta">Get Started</a>
     </div>
   </header>
 
@@ -37,7 +39,7 @@
 
     <div class="content-block container">
       <figure class="about-app-shot" aria-label="SleepFactor app on phone">
-        <img src="Assets/Framed Screenshots/Screenshot_20260302_101458_SleepFactor-portrait.png" alt="SleepFactor app: habit logging screen in phone mockup" width="280" height="auto" loading="lazy">
+        <img src="Assets/images/step-habit-logging.png" alt="SleepFactor app: habit logging screen" width="280" height="auto" loading="lazy">
       </figure>
       <h2>Our mission</h2>
       <p>SleepFactor helps you see the link between your daily habits and your sleep. We believe that by logging what you do and comparing it with your sleep data, you can spot what helps or hurts your rest—and make small changes that add up.</p>
@@ -59,18 +61,37 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <ul class="footer-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-      </ul>
+    <div class="container site-footer__grid">
+      <div class="site-footer__brand">
+        <a href="index.html" class="logo-link logo-link--footer" aria-label="SleepFactor home">
+          <img src="logo.svg" alt="" width="180" height="32">
+        </a>
+        <p class="site-footer__mission">Understand how your habits shape your sleep—so you can wake up clearer.</p>
+      </div>
+      <div class="site-footer__col">
+        <h3 class="site-footer__heading">Product</h3>
+        <ul class="site-footer__links">
+          <li><a href="index.html#method">The Method</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#correlation-engine">Correlation Engine</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h3 class="site-footer__heading">Legal</h3>
+        <ul class="site-footer__links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="privacy.html#cookies">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container site-footer__bottom">
       <p class="copyright">© SleepFactor. All rights reserved.</p>
     </div>
   </footer>
 
   <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
     <div class="container">
-      <p>We use a cookie to remember your preference and basic web analytics from Vercel. <a href="privacy.html#cookies" style="color: #93C5FD;">Learn more</a>.</p>
+      <p>We use a cookie to remember your preference and basic web analytics from Vercel. <a href="privacy.html#cookies">Learn more</a>.</p>
       <button id="cookie-accept" class="btn">Accept</button>
     </div>
   </div>
