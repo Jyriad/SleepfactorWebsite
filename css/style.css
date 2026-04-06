@@ -324,7 +324,8 @@ body {
   overflow: hidden;
   box-shadow: var(--shadow-card);
   border: 1px solid var(--border-app);
-  background: var(--white);
+  /* Matches hero render background (light grey, not white card) */
+  background: #f5f5f5;
 }
 
 .hero__visual img {
@@ -508,10 +509,10 @@ body {
 }
 
 .correlation-frame {
-  background: linear-gradient(145deg, var(--primary-dark) 0%, #1a3d6e 100%);
+  background: var(--background-app);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-xl);
-  border: 3px solid var(--primary-light);
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-app);
   box-shadow: var(--shadow-card);
 }
 
