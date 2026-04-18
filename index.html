@@ -131,10 +131,9 @@
         <h2 id="beta-heading" class="cta-section__title">Ready for a better morning?</h2>
         <p id="beta-description" class="cta-section__lead">SleepFactor is on Android and iOS. Join the beta and we’ll let you know when you can get early access.</p>
         <form id="waitlist-form" class="waitlist-form" action="#" method="post" aria-labelledby="beta-heading" aria-describedby="beta-description">
-          <div class="waitlist-form__row waitlist-form__row--email">
-            <label for="waitlist-email" class="visually-hidden">Email</label>
-            <input type="email" id="waitlist-email" name="email" required placeholder="Enter your email" autocomplete="email">
-            <button type="submit" class="btn btn-cta-submit">Get early access</button>
+          <div class="form-row">
+            <label for="waitlist-email">Email</label>
+            <input type="email" id="waitlist-email" name="email" required placeholder="you@example.com" autocomplete="email" inputmode="email">
           </div>
           <div class="form-row">
             <label for="waitlist-name">Name <span class="optional">(optional)</span></label>
@@ -155,6 +154,9 @@
               <label class="reasons-item"><input type="checkbox" name="reasons" value="find_supplements"> Find which supplements work</label>
               <label class="reasons-item"><input type="checkbox" name="reasons" value="habits_hurting"> See which habits are hurting my sleep</label>
             </div>
+          </div>
+          <div class="waitlist-form__submit">
+            <button type="submit" class="btn btn-cta-submit" aria-label="Submit beta waitlist sign-up">Submit</button>
           </div>
         </form>
         <p id="waitlist-message" class="waitlist-message" aria-live="polite"></p>

@@ -646,53 +646,43 @@ body {
   text-align: left;
 }
 
-.waitlist-form__row--email {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
-  align-items: stretch;
-  margin-bottom: var(--spacing-lg);
-  padding: 6px;
-  background: rgba(0, 0, 0, 0.25);
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.waitlist-form__row--email input[type="email"] {
-  flex: 1;
-  min-width: 180px;
-  border: none;
-  background: transparent;
-  color: var(--white);
-  padding: 12px 16px;
+.waitlist-form .form-row input[type="email"] {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-regular);
   font-size: var(--font-body);
-}
-
-.waitlist-form__row--email input::placeholder {
-  color: rgba(255, 255, 255, 0.45);
-}
-
-.waitlist-form__row--email input:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.waitlist-form__row--email input[type="email"]:focus-visible {
-  outline: 2px solid var(--primary-light);
-  outline-offset: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--white);
 }
 
-.btn-cta-submit {
-  padding: 12px 22px;
-  border-radius: var(--radius-pill);
+.waitlist-form .form-row input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.waitlist-form .form-row input[type="email"]:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 2px rgba(102, 152, 207, 0.35);
+}
+
+.waitlist-form__submit {
+  margin-top: var(--spacing-lg);
+}
+
+.waitlist-form__submit .btn-cta-submit {
+  width: 100%;
+  padding: 14px var(--spacing-xl);
+  border: none;
+  border-radius: var(--radius-sm);
   background: var(--white);
   color: var(--primary-dark);
   font-weight: 700;
-  flex-shrink: 0;
+  font-size: var(--font-body);
+  cursor: pointer;
 }
 
-.btn-cta-submit:hover {
+.waitlist-form__submit .btn-cta-submit:hover {
   background: var(--accent-soft);
 }
 
@@ -713,7 +703,7 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.waitlist-form .form-row:not(.waitlist-form__row--email) input[type="text"] {
+.waitlist-form .form-row input[type="text"] {
   width: 100%;
   padding: var(--spacing-md) var(--spacing-regular);
   font-size: var(--font-body);
@@ -723,11 +713,11 @@ body {
   color: var(--white);
 }
 
-.waitlist-form .form-row:not(.waitlist-form__row--email) input::placeholder {
+.waitlist-form .form-row input[type="text"]::placeholder {
   color: rgba(255, 255, 255, 0.4);
 }
 
-.waitlist-form .form-row:not(.waitlist-form__row--email) input:focus {
+.waitlist-form .form-row input[type="text"]:focus {
   outline: none;
   border-color: var(--primary-light);
   box-shadow: 0 0 0 2px rgba(102, 152, 207, 0.35);
