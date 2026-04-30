@@ -781,6 +781,22 @@ body {
   accent-color: var(--primary-light);
 }
 
+.consent-item {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  font-size: var(--font-small);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+
+.consent-item input {
+  width: auto;
+  margin-top: 3px;
+  accent-color: var(--primary-light);
+}
+
 .waitlist-message {
   font-size: var(--font-small);
   margin-top: var(--spacing-regular);

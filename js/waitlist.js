@@ -22,9 +22,11 @@
     var nameInput = form.querySelector('input[name="name"]');
     var platformRadio = form.querySelector('input[name="platform"]:checked');
     var reasonCheckboxes = form.querySelectorAll('input[name="reasons"]:checked');
+    var marketingOptInCheckbox = form.querySelector('input[name="marketing_opt_in"]');
     var email = emailInput && emailInput.value.trim();
     var name = nameInput ? nameInput.value.trim() : null;
     var platform = platformRadio ? platformRadio.value : null;
+    var marketingOptIn = !!(marketingOptInCheckbox && marketingOptInCheckbox.checked);
     var reasons = [];
     for (var i = 0; i < reasonCheckboxes.length; i++) reasons.push(reasonCheckboxes[i].value);
 
@@ -55,7 +57,16 @@
         'Authorization': 'Bearer ' + key,
         'Prefer': 'return=minimal'
       },
-      body: JSON.stringify({ email: email.toLowerCase(), name: name || null, platform: platform, reasons: reasons })
+      body: JSON.stringify({
+        email: email.toLowerCase(),
+        name: name || null,
+        platform: platform,
+        reasons: reasons,
+        marketing_email_opt_in: marketingOptIn,
+        marketing_consent_source: marketingOptIn ? 'website_waitlist' : 'website_waitlist_declined',
+        marketing_consent_updated_at: new Date().toISOString(),
+        marketing_unsubscribed_at: marketingOptIn ? null : new Date().toISOString()
+      })
     })
       .then(function (res) {
         if (res.status === 201 || res.status === 204) {
@@ -64,6 +75,7 @@
           if (nameInput) nameInput.value = '';
           form.querySelectorAll('input[name="platform"]').forEach(function (r) { r.checked = false; });
           form.querySelectorAll('input[name="reasons"]').forEach(function (cb) { cb.checked = false; });
+          if (marketingOptInCheckbox) marketingOptInCheckbox.checked = false;
         } else if (res.status === 409) {
           showMessage('This email is already in the beta programme.', true);
         } else {
