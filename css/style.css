@@ -797,6 +797,27 @@ body {
   accent-color: var(--primary-light);
 }
 
+.consent-item--error {
+  color: #fecaca;
+}
+
+.consent-item--error input {
+  accent-color: #ef4444;
+}
+
+.consent-item--wiggle {
+  animation: consentWiggle 360ms ease-in-out;
+}
+
+@keyframes consentWiggle {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+
 .waitlist-message {
   font-size: var(--font-small);
   margin-top: var(--spacing-regular);
