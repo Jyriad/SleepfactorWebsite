@@ -210,6 +210,20 @@ body {
   }
 }
 
+@media (max-width: 700px) {
+  .site-header {
+    padding: var(--spacing-sm) 0;
+  }
+
+  .btn-nav-cta {
+    display: none;
+  }
+
+  .hero--split {
+    padding-top: var(--spacing-xl);
+  }
+}
+
 @media (max-width: 520px) {
   .nav-links {
     gap: var(--spacing-sm);
@@ -1022,6 +1036,30 @@ body {
 
 .cookie-banner .btn:hover {
   background: var(--white);
+}
+
+@media (max-width: 700px) {
+  .cookie-banner {
+    padding: 10px 0 calc(10px + env(safe-area-inset-bottom));
+  }
+
+  .cookie-banner .container {
+    gap: 10px;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  .cookie-banner p {
+    min-width: 0;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .cookie-banner .btn {
+    padding: 8px 14px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
 }
 
 /* Anchor offset under sticky header */
