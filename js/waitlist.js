@@ -2,6 +2,7 @@
   var form = document.getElementById('waitlist-form');
   var messageEl = document.getElementById('waitlist-message');
   var submitBtn = form && form.querySelector('button[type="submit"]');
+  var consentLabel = form && form.querySelector('.consent-item');
 
   function showMessage(text, isError) {
     if (!messageEl) return;
@@ -14,7 +15,30 @@
     if (submitBtn) submitBtn.disabled = loading;
   }
 
+  function clearConsentErrorState() {
+    if (!consentLabel) return;
+    consentLabel.classList.remove('consent-item--error');
+    consentLabel.classList.remove('consent-item--wiggle');
+  }
+
+  function showConsentRequiredState() {
+    if (!consentLabel) return;
+    consentLabel.classList.add('consent-item--error');
+    consentLabel.classList.remove('consent-item--wiggle');
+    // Force reflow so wiggle can replay on repeated submit attempts.
+    void consentLabel.offsetWidth;
+    consentLabel.classList.add('consent-item--wiggle');
+  }
+
   if (!form) return;
+
+  if (form.querySelector('input[name="marketing_opt_in"]')) {
+    form.querySelector('input[name="marketing_opt_in"]').addEventListener('change', function () {
+      if (this.checked) {
+        clearConsentErrorState();
+      }
+    });
+  }
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -38,6 +62,12 @@
       showMessage('Please enter a valid email address.', true);
       return;
     }
+    if (!marketingOptIn) {
+      showMessage('Please tick the marketing consent box before submitting.', true);
+      showConsentRequiredState();
+      return;
+    }
+    clearConsentErrorState();
 
     var url = window.SLEEPFACTOR_SUPABASE_URL;
     var key = window.SLEEPFACTOR_SUPABASE_ANON_KEY;
@@ -76,6 +106,7 @@
           form.querySelectorAll('input[name="platform"]').forEach(function (r) { r.checked = false; });
           form.querySelectorAll('input[name="reasons"]').forEach(function (cb) { cb.checked = false; });
           if (marketingOptInCheckbox) marketingOptInCheckbox.checked = false;
+          clearConsentErrorState();
         } else if (res.status === 409) {
           showMessage('This email is already in the beta programme.', true);
         } else {

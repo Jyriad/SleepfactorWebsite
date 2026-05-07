@@ -180,33 +180,21 @@ body {
   color: var(--primary);
 }
 
-.btn-nav-cta {
-  flex-shrink: 0;
-  padding: 10px 20px;
-  font-size: var(--font-small);
-  font-weight: 600;
-  border-radius: var(--radius-pill);
-  background: var(--primary);
-  color: var(--white);
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: background 0.15s ease, opacity 0.15s ease;
-}
-
-.btn-nav-cta:hover {
-  background: var(--secondary);
-  opacity: 1;
-}
-
 @media (max-width: 900px) {
   .site-nav {
     order: 3;
     flex-basis: 100%;
     justify-content: flex-start;
   }
-  .btn-nav-cta {
-    margin-left: auto;
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    padding: var(--spacing-sm) 0;
+  }
+
+  .hero--split {
+    padding-top: var(--spacing-xl);
   }
 }
 
@@ -797,6 +785,27 @@ body {
   accent-color: var(--primary-light);
 }
 
+.consent-item--error {
+  color: #fecaca;
+}
+
+.consent-item--error input {
+  accent-color: #ef4444;
+}
+
+.consent-item--wiggle {
+  animation: consentWiggle 360ms ease-in-out;
+}
+
+@keyframes consentWiggle {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+
 .waitlist-message {
   font-size: var(--font-small);
   margin-top: var(--spacing-regular);
@@ -993,14 +1002,68 @@ body {
   color: var(--primary-light);
 }
 
-.cookie-banner .btn {
+.cookie-banner__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
   flex-shrink: 0;
+}
+
+.cookie-banner .btn-cookie-accept {
   background: var(--accent-soft);
   color: var(--primary-dark);
 }
 
-.cookie-banner .btn:hover {
+.cookie-banner .btn-cookie-accept:hover {
   background: var(--white);
+}
+
+.cookie-banner .btn-cookie-decline {
+  padding: 8px 10px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  font-size: 13px;
+}
+
+.cookie-banner .btn-cookie-decline:hover {
+  color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 700px) {
+  .cookie-banner {
+    padding: 10px 0 calc(10px + env(safe-area-inset-bottom));
+  }
+
+  .cookie-banner .container {
+    gap: 10px;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  .cookie-banner p {
+    min-width: 0;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .cookie-banner__actions {
+    gap: 6px;
+  }
+
+  .cookie-banner .btn-cookie-accept,
+  .cookie-banner .btn-cookie-decline {
+    padding: 8px 14px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .cookie-banner .btn-cookie-decline {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 /* Anchor offset under sticky header */
