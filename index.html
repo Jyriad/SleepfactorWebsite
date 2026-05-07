@@ -8,8 +8,6 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/OverusedGrotesk-VF.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
-  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
-  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -201,8 +199,11 @@
 
   <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
     <div class="container">
-      <p>We use a cookie to remember your preference and basic web analytics from Vercel. <a href="privacy.html#cookies">Learn more</a>.</p>
-      <button id="cookie-accept" class="btn">Accept</button>
+      <p>We use one essential cookie to remember your choice. With your permission, we also use privacy-friendly analytics to improve the site. <a href="privacy.html#cookies">Learn more</a>.</p>
+      <div class="cookie-banner__actions">
+        <button id="cookie-decline" class="btn btn-cookie-decline" type="button">Decline</button>
+        <button id="cookie-accept" class="btn btn-cookie-accept" type="button">Accept</button>
+      </div>
     </div>
   </div>
 

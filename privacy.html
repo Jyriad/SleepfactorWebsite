@@ -8,8 +8,6 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/OverusedGrotesk-VF.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
-  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
-  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -53,9 +51,10 @@
       <p>We store waitlist submissions in a secure database operated by our service provider (<strong>Supabase</strong>) so we can run the beta programme and follow up when access is available. We also use <strong>Resend</strong> to manage email delivery preferences (including unsubscribe handling) for those updates. We do not sell your data or use it for unrelated third‑party marketing. If you try to join with an email that is already registered, we will tell you rather than create a duplicate.</p>
 
       <h2 id="cookies">Cookies and web analytics</h2>
-      <p>We use a single, strictly necessary cookie to remember whether you have accepted the cookie notice. It stores only a preference (e.g. “accepted”) and is not used for tracking or advertising.</p>
-      <p>We use basic web analytics from Vercel to understand how the site is used (e.g. page views and general usage). This helps us improve the website. Vercel Analytics is designed to be privacy-friendly and does not use cookies for this basic analytics. You can read more in <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel’s privacy policy</a>.</p>
-      <p>You can clear the consent cookie at any time via your browser settings; the notice may appear again until you accept.</p>
+      <p>We use a single, strictly necessary cookie to remember your cookie choice (accepted or declined). This cookie stores preference only and is not used for advertising.</p>
+      <p>We ask for your choice in the cookie banner. If you accept, we load privacy-friendly website analytics from Vercel to understand general usage (such as page views) and improve the site. If you decline, those analytics are not loaded.</p>
+      <p>You can clear the choice cookie at any time in your browser settings; the notice may appear again until you choose.</p>
+      <p>You can read more in <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel’s privacy policy</a>.</p>
       <p>The site may be hosted on third‑party services (for example GitHub Pages or Vercel). Those providers’ own terms and policies apply to how pages are delivered.</p>
 
       <h2>The SleepFactor app</h2>
@@ -140,8 +139,11 @@
 
   <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
     <div class="container">
-      <p>We use a cookie to remember your preference and basic web analytics from Vercel. <a href="privacy.html#cookies">Learn more</a>.</p>
-      <button id="cookie-accept" class="btn">Accept</button>
+      <p>We use one essential cookie to remember your choice. With your permission, we also use privacy-friendly analytics to improve the site. <a href="privacy.html#cookies">Learn more</a>.</p>
+      <div class="cookie-banner__actions">
+        <button id="cookie-decline" class="btn btn-cookie-decline" type="button">Decline</button>
+        <button id="cookie-accept" class="btn btn-cookie-accept" type="button">Accept</button>
+      </div>
     </div>
   </div>
 
