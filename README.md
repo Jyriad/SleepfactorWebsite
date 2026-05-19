@@ -1,16 +1,17 @@
-# SleepFactor marketing website
+# Sleepfactor marketing website
 
-Static marketing site for the SleepFactor mobile app. Matches the app’s design and brand.
+Static marketing site for the Sleepfactor mobile app. Matches the app’s design and brand.
 
 ## Contents
 
 - **Home** – Value proposition and “how it works” (log habits → sync sleep data → see habit insights).
-- **About** – Mission, what we do, who we are, contact.
+- **About** – Founder story, mission, what we do, contact.
+- **FAQ** – Common questions about the app, beta, privacy, and integrations.
 - **Privacy** – Privacy policy and cookie information.
 
 The site uses a cookie for consent and basic web analytics from Vercel.
 
-**Beta programme:** The homepage includes a beta sign-up form (email, optional name, and reasons for joining). Submissions are stored in the SleepFactor Supabase project in the `waitlist` table (including a `reasons` JSONB column). The same Supabase project as the app is used by default; see `js/supabase-config.js` to point to a different project.
+**Beta programme:** The homepage includes a beta sign-up form (email, optional name, and reasons for joining). Submissions are stored in the Sleepfactor Supabase project in the `waitlist` table (including a `reasons` JSONB column). The same Supabase project as the app is used by default; see `js/supabase-config.js` to point to a different project.
 
 ## Hosting on GitHub Pages
 
@@ -20,7 +21,7 @@ The site uses a cookie for consent and basic web analytics from Vercel.
    - In this folder, run:
      - `git init`
      - `git add .`
-     - `git commit -m "Initial SleepFactor marketing site"`
+     - `git commit -m "Initial Sleepfactor marketing site"`
      - `git branch -M main`
      - `git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git`
      - `git push -u origin main`

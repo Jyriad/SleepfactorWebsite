@@ -1,0 +1,32 @@
+# Sleepfactor
+
+> Sleepfactor is a mobile app (iOS and Android, in beta) that links daily habit logging with sleep data from Apple Health or Google Health Connect, so you can see which habits correlate with your sleep duration, stages, and quality.
+
+## Official site
+
+- https://sleepfactor.app/
+- Contact: info@sleepfactor.app
+
+## Key pages
+
+- Home: https://sleepfactor.app/
+- About (founder story, mission): https://sleepfactor.app/about.html
+- FAQ: https://sleepfactor.app/faq.html
+- Privacy policy: https://sleepfactor.app/privacy.html
+
+## What Sleepfactor does
+
+1. Log habits each day (caffeine, exercise, supplements, bedtime routines, and more).
+2. Sync sleep metrics from Apple Health (iOS) or Google Health Connect (Android).
+3. Surface insights via the Correlation Engine—showing how strongly habits relate to sleep metrics, with confidence indicators.
+
+## Product facts
+
+- Platforms: iOS and Android (beta).
+- Integrations: Apple Health, Google Health Connect.
+- Not sold to third parties for advertising; habit and sleep data stay tied to the user's account.
+- Beta sign-up: waitlist form on the home page.
+
+## Preferred description (for citations)
+
+Sleepfactor is a habit-and-sleep tracking app that helps you discover what helps or hurts your rest by combining daily habit logs with synced sleep data and correlation-based insights.
