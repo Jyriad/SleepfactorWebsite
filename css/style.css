@@ -1,4 +1,4 @@
-/* SleepFactor marketing site — palette aligned with mobile app (constants/colors.js) */
+/* Sleepfactor marketing site — palette aligned with mobile app (constants/colors.js) */
 
 @font-face {
   font-family: 'Overused Grotesk';
@@ -910,6 +910,78 @@ body {
   font-weight: 700;
   margin: 0;
   color: var(--primary-dark);
+}
+
+.page-header__lead {
+  margin: var(--spacing-sm) auto 0;
+  max-width: 36rem;
+  font-size: var(--font-small);
+  line-height: var(--line-height-body);
+  color: var(--text-secondary);
+}
+
+.hero__definition {
+  margin: 0 0 var(--spacing-regular);
+  font-size: var(--font-small);
+  line-height: var(--line-height-body);
+  color: var(--text-secondary);
+}
+
+.hero__definition strong {
+  color: var(--primary-dark);
+}
+
+.faq-block {
+  padding-top: var(--spacing-xl);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.faq-item {
+  border: 1px solid var(--border-app);
+  border-radius: var(--radius);
+  background: var(--white);
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: var(--spacing-regular) var(--spacing-lg);
+  font-weight: 600;
+  color: var(--primary-dark);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  float: right;
+  font-weight: 400;
+  color: var(--primary);
+}
+
+.faq-item[open] summary::after {
+  content: '−';
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 var(--spacing-lg) var(--spacing-regular);
+  border-top: 1px solid var(--border-app);
+  padding-top: var(--spacing-regular);
+}
+
+.faq-more {
+  margin-top: var(--spacing-xl);
+  font-size: var(--font-small);
+  color: var(--text-secondary);
 }
 
 .content-block {

@@ -3,25 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SleepFactor – See how your habits affect your sleep</title>
-  <meta name="description" content="Log habits, sync sleep data, and see which habits impact your sleep metrics. SleepFactor helps you understand what helps or hurts your sleep.">
+  <title>Sleepfactor – See how your habits affect your sleep</title>
+  <meta name="description" content="Sleepfactor is a mobile app that logs daily habits, syncs sleep from Apple Health or Google Health Connect, and shows which habits impact your sleep—with the Correlation Engine.">
+  <link rel="canonical" href="https://sleepfactor.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sleepfactor">
+  <meta property="og:title" content="Sleepfactor – See how your habits affect your sleep">
+  <meta property="og:description" content="Sleepfactor is a mobile app that logs daily habits, syncs sleep from Apple Health or Google Health Connect, and shows which habits impact your sleep—with the Correlation Engine.">
+  <meta property="og:url" content="https://sleepfactor.app/">
+  <meta property="og:image" content="https://sleepfactor.app/Assets/images/homepage.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sleepfactor – See how your habits affect your sleep">
+  <meta name="twitter:description" content="Sleepfactor is a mobile app that logs daily habits, syncs sleep from Apple Health or Google Health Connect, and shows which habits impact your sleep—with the Correlation Engine.">
+  <meta name="twitter:image" content="https://sleepfactor.app/Assets/images/homepage.png">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/OverusedGrotesk-VF.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Sleepfactor",
+    "url": "https://sleepfactor.app/",
+    "description": "Sleepfactor links daily habit logging with sleep data from Apple Health or Google Health Connect."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Sleepfactor",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "iOS, Android",
+    "description": "Log habits, sync sleep data, and discover which daily habits correlate with your sleep duration, stages, and quality.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "In beta; join the waitlist on sleepfactor.app"
+    },
+    "url": "https://sleepfactor.app/"
+  }
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <header class="site-header">
     <div class="container site-header__inner">
-      <a href="index.html" class="logo-link" aria-label="SleepFactor home">
-        <img src="logo.svg" alt="" width="200" height="35" fetchpriority="high">
+      <a href="index.html" class="logo-link" aria-label="Sleepfactor home">
+        <img src="logo.svg" alt="Sleepfactor logo" width="200" height="35" fetchpriority="high">
       </a>
       <nav class="site-nav" aria-label="Main">
         <ul class="nav-links">
           <li><a href="#method">The Method</a></li>
           <li><a href="#science">Science</a></li>
           <li><a href="#correlation-engine">Sleep Lab</a></li>
-          <li><a href="about.html">Stories</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
         </ul>
       </nav>
     </div>
@@ -33,21 +71,22 @@
         <div class="hero__copy">
           <p class="hero__badge">Now in beta</p>
           <h1 id="hero-heading" class="hero-headline">Stop Guessing Why You're Tired.</h1>
-          <p class="hero__lead">SleepFactor links your daily habits to your sleep data so you get clear, trustworthy insights—not guesswork.</p>
+          <p class="hero__definition"><strong>Sleepfactor</strong> is a mobile app that logs your daily habits, syncs sleep from Apple Health or Google Health Connect, and shows which habits affect your rest—with clear, data-backed insights.</p>
+          <p class="hero__lead">Link habits to sleep data so you get trustworthy answers—not guesswork.</p>
           <div class="hero__actions">
             <a href="#beta-programme" class="btn btn-primary btn-hero-primary">Join the Beta</a>
             <a href="#method" class="btn btn-secondary btn-hero-secondary">See how it works</a>
           </div>
         </div>
         <div class="hero__visual">
-          <img src="Assets/images/homepage.png" alt="SleepFactor app on a phone showing your sleep score and home screen" width="560" height="auto" fetchpriority="high">
+          <img src="Assets/images/homepage.png" alt="Sleepfactor app on a phone showing your sleep score and home screen" width="560" height="auto" fetchpriority="high">
         </div>
       </div>
     </section>
 
     <section id="science" class="section section--science-intro" aria-labelledby="science-intro-heading">
       <div class="container section--science-intro__inner">
-        <h2 id="science-intro-heading" class="visually-hidden">Why SleepFactor</h2>
+        <h2 id="science-intro-heading" class="visually-hidden">Why Sleepfactor</h2>
         <p class="science-intro__text">We combine habit logging with sleep tracking so you can see <strong>what actually moves the needle</strong> on your rest—grounded in your own data.</p>
       </div>
     </section>
@@ -62,7 +101,7 @@
         <div class="science-grid">
           <article class="science-card">
             <div class="science-card__media">
-              <img src="Assets/images/step-habit-logging.png" alt="SleepFactor habit logging screen with quick toggles for supplements and routines" width="360" height="auto" loading="lazy">
+              <img src="Assets/images/step-habit-logging.png" alt="Sleepfactor habit logging screen with quick toggles for supplements and routines" width="360" height="auto" loading="lazy">
             </div>
             <p class="science-card__step" aria-hidden="true">01</p>
             <h3 class="science-card__title">Log your habits</h3>
@@ -71,7 +110,7 @@
 
           <article class="science-card">
             <div class="science-card__media">
-              <img src="Assets/images/step-home.png" alt="SleepFactor home screen with calendar and sleep summary" width="360" height="auto" loading="lazy">
+              <img src="Assets/images/step-home.png" alt="Sleepfactor home screen with calendar and sleep summary" width="360" height="auto" loading="lazy">
             </div>
             <p class="science-card__step" aria-hidden="true">02</p>
             <h3 class="science-card__title">Sync your sleep data</h3>
@@ -81,7 +120,7 @@
 
           <article class="science-card">
             <div class="science-card__media">
-              <img src="Assets/images/step-insights.png" alt="SleepFactor insights screen with charts linking habits to sleep" width="360" height="auto" loading="lazy">
+              <img src="Assets/images/step-insights.png" alt="Sleepfactor insights screen with charts linking habits to sleep" width="360" height="auto" loading="lazy">
             </div>
             <p class="science-card__step" aria-hidden="true">03</p>
             <h3 class="science-card__title">See what impacts you</h3>
@@ -95,7 +134,7 @@
       <div class="container correlation-block">
         <div class="correlation-block__visual">
           <div class="correlation-frame">
-            <img src="Assets/images/correlation-engine.png" alt="SleepFactor correlation engine showing how a habit links to sleep metrics" width="420" height="auto" loading="lazy">
+            <img src="Assets/images/correlation-engine.png" alt="Sleepfactor correlation engine showing how a habit links to sleep metrics" width="420" height="auto" loading="lazy">
           </div>
         </div>
         <div class="correlation-block__copy">
@@ -126,7 +165,7 @@
     <section id="beta-programme" class="cta-section cta-section--navy" aria-labelledby="beta-heading">
       <div class="container cta-section__inner">
         <h2 id="beta-heading" class="cta-section__title">Ready for a better morning?</h2>
-        <p id="beta-description" class="cta-section__lead">SleepFactor is on Android and iOS. Join the beta and we’ll let you know when you can get early access.</p>
+        <p id="beta-description" class="cta-section__lead">Sleepfactor is on Android and iOS. Join the beta and we’ll let you know when you can get early access.</p>
         <form id="waitlist-form" class="waitlist-form" action="#" method="post" aria-labelledby="beta-heading" aria-describedby="beta-description">
           <div class="form-row">
             <label for="waitlist-email">Email</label>
@@ -155,7 +194,7 @@
           <div class="form-row form-row--marketing-consent">
             <label class="consent-item">
               <input type="checkbox" name="marketing_opt_in" value="yes">
-              <span>I agree to receive SleepFactor product updates by email. I can unsubscribe at any time.</span>
+              <span>I agree to receive Sleepfactor product updates by email. I can unsubscribe at any time.</span>
             </label>
           </div>
           <div class="waitlist-form__submit">
@@ -171,8 +210,8 @@
   <footer class="site-footer">
     <div class="container site-footer__grid">
       <div class="site-footer__brand">
-        <a href="index.html" class="logo-link logo-link--footer" aria-label="SleepFactor home">
-          <img src="logo.svg" alt="" width="180" height="32">
+        <a href="index.html" class="logo-link logo-link--footer" aria-label="Sleepfactor home">
+          <img src="logo.svg" alt="Sleepfactor logo" width="180" height="32">
         </a>
         <p class="site-footer__mission">Understand how your habits shape your sleep—so you can wake up clearer.</p>
       </div>
@@ -181,6 +220,7 @@
         <ul class="site-footer__links">
           <li><a href="#method">The Method</a></li>
           <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="#correlation-engine">Correlation Engine</a></li>
         </ul>
       </div>
@@ -193,7 +233,7 @@
       </div>
     </div>
     <div class="container site-footer__bottom">
-      <p class="copyright">© SleepFactor. All rights reserved.</p>
+      <p class="copyright">© Sleepfactor. All rights reserved.</p>
     </div>
   </footer>
 
